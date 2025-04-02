@@ -47,12 +47,7 @@ function getExchangeRate(){
         amountVal = 1;
     }
     exchangeRateTxt.innerText = "Getting exchange rate...";
-    
-    //paste this URL in your browser "https://v6.exchangerate-api.com" and singup for the API key
-    //you will get something like "450137bfaa3a83f1d6b3643a"
-    //paste it on line 55 where it says "paste here your API key"
-    
-    let url = `https://v6.exchangerate-api.com/v6/ paste here your API key/latest/${fromCurrency.value}`;
+    let url = `https://v6.exchangerate-api.com/v6/450137bfaa3a83f1d6b3643a/latest/${fromCurrency.value}`;
     fetch(url).then(response => response.json()).then(result =>{
         let exchangeRate = result.conversion_rates[toCurrency.value];
         let totalExRate = (amountVal * exchangeRate).toFixed(2);
